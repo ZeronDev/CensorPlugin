@@ -15,13 +15,13 @@ object WordLogger {
             FileWriter(logger).use { create() }
         }
     }
-    fun add(playerName: String, uuid: UUID, message: Component) {
+    fun add(playerName: String, uuid: UUID, message: String) {
         val logger = File(plugin.dataFolder, "ChatLogger.txt")
         val currentTime = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("[yyyy/MM/dd] HH:mm")
         val formatted = currentTime.format(formatter)
         FileWriter(logger, true).use {
-            it.write("$formatted <$playerName ($uuid)> $message")
+            it.write("[$formatted] <$playerName> ($uuid) $message\n")
         }
     }
 }

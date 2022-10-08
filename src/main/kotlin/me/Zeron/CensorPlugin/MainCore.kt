@@ -14,8 +14,12 @@ class MainCore : JavaPlugin() {
     override fun onEnable() {
         plugin = this
         logger.info("$prefix 플러그인이 활성화 중입니다")
+        logger.info("$prefix 제론#6595 개발")
         server.pluginManager.registerEvents(ChatListener, this)
         val descriptionFile = File(dataFolder, "description.txt")
+        if (!dataFolder.exists()) {
+            dataFolder.mkdir()
+        }
         if (!descriptionFile.exists()) {
             val fileWriter = FileWriter(descriptionFile)
             fileWriter.use {
@@ -35,6 +39,7 @@ class MainCore : JavaPlugin() {
     }
 
     override fun onDisable() {
-        logger.info("$prefix 비플러그인이 활성화 중입니다")
+        logger.info("$prefix 플러그인이 비활성화 중입니다")
+        logger.info("$prefix 제론#6595 개발")
     }
 }
