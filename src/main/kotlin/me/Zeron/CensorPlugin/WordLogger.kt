@@ -12,10 +12,11 @@ object WordLogger {
     fun create() {
         val logger = File(plugin.dataFolder, "ChatLogger.txt")
         if (!logger.exists()) {
-            FileWriter(logger).use { create() }
+            FileWriter(logger).use { it.write("") }
         }
     }
     fun add(playerName: String, uuid: UUID, message: String) {
+        create()
         val logger = File(plugin.dataFolder, "ChatLogger.txt")
         val currentTime = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("[yyyy/MM/dd] HH:mm")
