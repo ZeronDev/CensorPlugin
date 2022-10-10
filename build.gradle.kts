@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "me.Zeron.CensorPlugin"
-version = "1.0.0"
+version = "1.1"
 
 java {
     toolchain.languageVersion.set(JavaLanguageVersion.of(17))
