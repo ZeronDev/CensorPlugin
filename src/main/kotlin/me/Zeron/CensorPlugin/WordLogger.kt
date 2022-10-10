@@ -25,14 +25,4 @@ object WordLogger {
             it.write("[$formatted] <$playerName> ($uuid) $message\n")
         }
     }
-    fun signAdd(playerName: String, uuid: UUID, message: String) {
-        create()
-        val logger = File(plugin.dataFolder, "ChatLogger.txt")
-        val currentTime = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofPattern("[yyyy/MM/dd] HH:mm")
-        val formatted = currentTime.format(formatter)
-        FileWriter(logger, true).use {
-            it.write("[$formatted] <$playerName> ($uuid) $message\n - SIGN")
-        }
-    }
 }

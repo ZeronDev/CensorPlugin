@@ -1,5 +1,5 @@
 name: CensorPlugin
-version: 1.1
+version: 1.0.0
 api-version: 1.17
 author: Zeron
 main: me.Zeron.CensorPlugin.MainCore
